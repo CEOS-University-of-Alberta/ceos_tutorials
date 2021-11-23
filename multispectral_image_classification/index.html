@@ -18,7 +18,7 @@
     
     
       
-        <title>Prepare your working folder - CEOS Tutorials</title>
+        <title>Multispectral image classification - CEOS Tutorials</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prepare-your-working-folder" class="md-skip">
+        <a href="#multispectral-image-classification" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prepare your working folder
+              Multispectral image classification
             
           </span>
         </div>
@@ -189,7 +189,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Prepare your working folder
+        Multispectral image classification
       </a>
       
     </li>
@@ -226,7 +226,19 @@
               
                 
                 
-                <h1 id="prepare-your-working-folder">Prepare your working folder</h1>
+                <h1 id="multispectral-image-classification">Multispectral image classification</h1>
+<blockquote>
+<p>Connor Bax &amp; Ronny A. Hernández Mora 23/11/2021</p>
+</blockquote>
+<p>This is the web static documentation for the multispectral image
+classification tutorial.</p>
+<p>If you want to follow this tutorial you can download all the code from:</p>
+<ul>
+<li><a href="https://github.com/CEOS-University-of-Alberta/multispectral_image_classification">https://github.com/CEOS-University-of-Alberta/multispectral_image_classification</a></li>
+</ul>
+<p>After you download all the materials, unzip your folder and open your
+.Rproj file.</p>
+<h1 id="prepare-your-working-folder">Prepare your working folder</h1>
 <p>If you downloaded this repo directly from GitHub, make sure to create a
 <code>data</code> folder in your repository. Put all the downloaded files there in
 order to run all the code below.</p>
@@ -441,8 +453,8 @@ well that may be occupied</p>
 <pre><code>gc()
 
 ##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells  5418941 289.5   17126477  914.7  11633340  621.3
-## Vcells 44060672 336.2  133367018 1017.6 166694524 1271.8
+## Ncells  5419809 289.5   17126477  914.7  17126477  914.7
+## Vcells 44067490 336.3  142022962 1083.6 166694524 1271.8
 </code></pre>
 <h2 id="calculating-ndvi-index">Calculating NDVI index</h2>
 <ul>
@@ -987,10 +999,6 @@ information of this package can be found
 clusters, runninig 100 iterations and 10 intiial configurations. Then,
 we plot the results</p>
 <pre><code>clusters &lt;- kmeans(v, 4, iter.max = 100, nstart = 10)
-
-## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
-
-## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
 ## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
