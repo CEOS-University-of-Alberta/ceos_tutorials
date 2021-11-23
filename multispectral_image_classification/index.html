@@ -18,7 +18,7 @@
     
     
       
-        <title>Prepare your working folder - draweR</title>
+        <title>Prepare your working folder - CEOS Tutorials</title>
       
     
     
@@ -76,7 +76,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="draweR" class="md-header__button md-logo" aria-label="draweR" data-md-component="logo">
+    <a href=".." title="CEOS Tutorials" class="md-header__button md-logo" aria-label="CEOS Tutorials" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -89,7 +89,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            draweR
+            CEOS Tutorials
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -160,13 +160,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="draweR" class="md-nav__button md-logo" aria-label="draweR" data-md-component="logo">
+    <a href=".." title="CEOS Tutorials" class="md-nav__button md-logo" aria-label="CEOS Tutorials" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    draweR
+    CEOS Tutorials
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -440,9 +440,9 @@ rm(bands)
 well that may be occupied</p>
 <pre><code>gc()
 
-##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 4944755 264.1    7862057 419.9  7379076 394.1
-## Vcells 9965473  76.1   26111350 199.3 26091998 199.1
+##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
+## Ncells  5418941 289.5   17126477  914.7  11633340  621.3
+## Vcells 44060672 336.2  133367018 1017.6 166694524 1271.8
 </code></pre>
 <h2 id="calculating-ndvi-index">Calculating NDVI index</h2>
 <ul>
@@ -757,7 +757,7 @@ glimpse(profiles)
 
 ## Rows: 4
 ## Columns: 12
-## $ id     &lt;chr&gt; "agriculture", "urban", "water", "other vegeta…
+## $ id     &lt;chr&gt; "agriculture", "urban", "water", "other vegetati…
 ## $ band1  &lt;dbl&gt; 9885.654, 11275.897, 9662.667, 9995.286
 ## $ band2  &lt;dbl&gt; 9158.038, 10688.795, 8742.917, 9274.214
 ## $ band3  &lt;dbl&gt; 9662.769, 10306.103, 7821.667, 9009.643
@@ -875,7 +875,7 @@ run the model to obtain the predictions of the entire image:</p>
                        progress = 'text') %&gt;% 
   ratify()
 
-##   |                                                             |                                                     |   0%  |                                                             |=============                                        |  25%  |                                                             |==========================                           |  50%  |                                                             |========================================             |  75%  |                                                             |=====================================================| 100%
+##   |                                                               |                                                       |   0%  |                                                               |==============                                         |  25%  |                                                               |============================                           |  50%  |                                                               |=========================================              |  75%  |                                                               |=======================================================| 100%
 ##
 </code></pre>
 <p>After we have all the predictions for the entire image, we are going to
@@ -988,17 +988,15 @@ clusters, runninig 100 iterations and 10 intiial configurations. Then,
 we plot the results</p>
 <pre><code>clusters &lt;- kmeans(v, 4, iter.max = 100, nstart = 10)
 
-## Warning: Quick-TRANSfer stage steps exceeded maximum (=
-## 47147350)
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
-## Warning: Quick-TRANSfer stage steps exceeded maximum (=
-## 47147350)
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
-## Warning: Quick-TRANSfer stage steps exceeded maximum (=
-## 47147350)
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
-## Warning: Quick-TRANSfer stage steps exceeded maximum (=
-## 47147350)
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
 kmeans_raster &lt;- raster(image)
 
