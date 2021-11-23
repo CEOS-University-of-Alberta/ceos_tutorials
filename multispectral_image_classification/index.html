@@ -1,0 +1,1102 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Ronny A. Hernández Mora">
+      
+      
+        <link rel="canonical" href="https://ceos-university-of-alberta.github.io/ceos_tutorials/multispectral_image_classification/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Prepare your working folder - draweR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prepare-your-working-folder" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="draweR" class="md-header__button md-logo" aria-label="draweR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            draweR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prepare your working folder
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="draweR" class="md-nav__button md-logo" aria-label="draweR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    draweR
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Prepare your working folder
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="prepare-your-working-folder">Prepare your working folder</h1>
+<p>If you downloaded this repo directly from GitHub, make sure to create a
+<code>data</code> folder in your repository. Put all the downloaded files there in
+order to run all the code below.</p>
+<p>You can set up your <code>data</code> folder with this code:</p>
+<pre><code>fs::dir_create(path = paste0(here::here(), "/data"))
+</code></pre>
+<h1 id="r-packages-needed-for-the-analysis">R packages needed for the analysis</h1>
+<pre><code>library(RStoolbox)
+library(raster)
+library(RStoolbox) 
+library(raster)
+library(tidyverse)
+library(sf)
+library(rpart)
+library(rpart.plot)
+library(rasterVis)
+library(mapedit)
+library(mapview)
+library(caret)
+library(forcats)
+library(patchwork)
+library(cluster)
+library(randomForest)
+</code></pre>
+<h1 id="understanding-the-image-data">Understanding the image data</h1>
+<p>We are going to read the raster image which is in a <code>.tiff</code> extention.
+This image comes from Landsat 8. Bands are as follows:</p>
+<ul>
+<li>Band 1 Coastal aersol</li>
+<li>Band 2 Blue</li>
+<li>Band 3 Green</li>
+<li>Band 4 Red</li>
+<li>Band 5 Near Infrared (NIR)</li>
+<li>Band 6 Shortwave Infrared (SWIR) 1</li>
+<li>Band 7 Shortwave Infrared (SWIR) 2</li>
+<li>Band 8 Panchromatic</li>
+<li>Band 9 Cirrus</li>
+<li>Band 10 Thermal Infrared (TIRS) 1</li>
+<li>Band 11 Thermal Infrared (TIRS) 2</li>
+</ul>
+<p>We are going to read individually each of the bands as follows:</p>
+<pre><code>band1 &lt;- raster("data/band1.tif")
+band2 &lt;- raster("data/band2.tif")
+band3 &lt;- raster("data/band3.tif")
+band4 &lt;- raster("data/band4.tif")
+band5 &lt;- raster("data/band5.tif")
+band6 &lt;- raster("data/band6.tif")
+band7 &lt;- raster("data/band7.tif")
+band8 &lt;- raster("data/band8.tif")
+band9 &lt;- raster("data/band9.tif")
+band10 &lt;- raster("data/band10.tif")
+band11 &lt;- raster("data/band11.tif")
+</code></pre>
+<h2 id="exploring-and-preparing-the-data">Exploring and preparing the data</h2>
+<p>Let’s take a look at some of the bands. Notice any variation or bands
+that stand out</p>
+<pre><code>plot(band1)
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-1.png" /></p>
+<pre><code>plot(band10)
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-2.png" /></p>
+<pre><code>plot(band5)
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-3.png" /></p>
+<p>Now, let’s take a look of the band resolutions:</p>
+<pre><code>bands &lt;- c(band1, band2, band3, band4, band5, band6, 
+           band7, band8, band9, band10, band11)
+
+for (i in bands) {
+  check &lt;- res(i)
+  print(check)
+}
+
+## [1] 30 30
+## [1] 30 30
+## [1] 30 30
+## [1] 30 30
+## [1] 30 30
+## [1] 30 30
+## [1] 30 30
+## [1] 15 15
+## [1] 30 30
+## [1] 30 30
+## [1] 30 30
+</code></pre>
+<h3 id="stacking-the-images">Stacking the images</h3>
+<p>In order to stack all the images together, we must ensure that all the
+resolutions match. To achieve this, we are going to use the function
+<code>aggregate</code> to lower the resolution (larger number) of the image with
+the higher resolution (lower number).</p>
+<p>Using <code>fact = 2</code> means that we are multiplying the current resolution by
+2. If we wanted to divide it by 2 we can use 1/2, or 0.5</p>
+<pre><code>band8 &lt;- aggregate(band8, fact = 2)
+</code></pre>
+<p>Now that we have all the images with the same resolution, we are going
+to procced to stack the bands into one image:</p>
+<pre><code>image &lt;- stack(band1, band2, band3, band4, band5, band6, 
+               band7, band8, band9, band10, band11)
+</code></pre>
+<p>How do we make sure that this step worked? Well, we just add 11 bands
+into one image, so this should have 11 layers. The function below should
+return 11.</p>
+<pre><code>nlayers(image)
+
+## [1] 11
+</code></pre>
+<h3 id="spatial-reference">Spatial reference</h3>
+<p>Now we are going to check that our resulting image have a spatial
+reference that its still valid. Otherwise our image will be lost
+spatially. We can check this with the following code:</p>
+<pre><code>crs(image)
+
+## Coordinate Reference System:
+## Deprecated Proj.4 representation:
+##  +proj=utm +zone=12 +datum=WGS84 +units=m +no_defs 
+## WKT2 2019 representation:
+## PROJCRS["WGS_1984_UTM_Zone_12N",
+##     BASEGEOGCRS["WGS 84",
+##         DATUM["World Geodetic System 1984",
+##             ELLIPSOID["WGS 84",6378137,298.257223563,
+##                 LENGTHUNIT["metre",1]]],
+##         PRIMEM["Greenwich",0,
+##             ANGLEUNIT["degree",0.0174532925199433]],
+##         ID["EPSG",4326]],
+##     CONVERSION["Transverse Mercator",
+##         METHOD["Transverse Mercator",
+##             ID["EPSG",9807]],
+##         PARAMETER["Latitude of natural origin",0,
+##             ANGLEUNIT["degree",0.0174532925199433],
+##             ID["EPSG",8801]],
+##         PARAMETER["Longitude of natural origin",-111,
+##             ANGLEUNIT["degree",0.0174532925199433],
+##             ID["EPSG",8802]],
+##         PARAMETER["Scale factor at natural origin",0.9996,
+##             SCALEUNIT["unity",1],
+##             ID["EPSG",8805]],
+##         PARAMETER["False easting",500000,
+##             LENGTHUNIT["metre",1],
+##             ID["EPSG",8806]],
+##         PARAMETER["False northing",0,
+##             LENGTHUNIT["metre",1],
+##             ID["EPSG",8807]]],
+##     CS[Cartesian,2],
+##         AXIS["easting",east,
+##             ORDER[1],
+##             LENGTHUNIT["metre",1]],
+##         AXIS["northing",north,
+##             ORDER[2],
+##             LENGTHUNIT["metre",1]],
+##     ID["EPSG",32612]]
+</code></pre>
+<ul>
+<li>What coordinate system is used?</li>
+<li>Often the ‘zone’ is accompanied by either an S or N, what would
+    these indicate?</li>
+</ul>
+<p>Now, we also want to confirm the resolution of the image matches the
+aggregated resolution</p>
+<pre><code>res(image)
+
+## [1] 30 30
+</code></pre>
+<h2 id="plotting-our-image">Plotting our image</h2>
+<p>Finally we have confirmed the necessary information of our created
+image. Let’s try to plot it using some band combinations. We will try:</p>
+<ul>
+<li>True Color Composite</li>
+<li>False Color Composite</li>
+</ul>
+<h3 id="true-color-composite">True Color Composite</h3>
+<pre><code>par(col.axis = "white", col.lab = "white", tck = 0)
+plotRGB(image, r = 4, g = 3, b = 2, axes = TRUE, 
+        stretch = "lin", main = "True Color Composite")
+box(col = "white")
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-11-1.png" /></p>
+<ul>
+<li>What bands are used in the True Color Composite? (Refer to the band
+    list at the top ex: Band 9 (Cirrus))</li>
+</ul>
+<h3 id="false-color-composite">False Color Composite</h3>
+<pre><code>par(col.axis = "white", col.lab = "white", tck = 0)
+plotRGB(image, r = 5, g = 4, b = 3, axes = TRUE, stretch = "lin",
+        main = "False Color Composite")
+box(col = "white")
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-12-1.png" /></p>
+<ul>
+<li>What bands are used in the True Color Composite? (Refer to the band
+    list at the top ex: Band 9 (Cirrus))</li>
+<li>What appears to be the main feature of the False Color Composite?
+    (In RED)</li>
+</ul>
+<h3 id="cleaning-our-working-environment">Cleaning our working environment</h3>
+<p>We are done with our image, but to start we created some objects that we
+no longer need, given that from now on, all our work is going to be
+based on the <code>image</code> object.</p>
+<p>All the <code>bands</code> object that we created before can be remove from our
+<code>Global environment</code>. This will allow us to free some temporal memory
+space.</p>
+<pre><code># Remove all the bands (11 in total)
+for (i in 1:11) {
+  rm(list = paste0("band", i))
+}
+
+# Remove our `bands` vector
+rm(bands)
+</code></pre>
+<p>Also, we can use a general ‘garbage collection’ to free up some space as
+well that may be occupied</p>
+<pre><code>gc()
+
+##           used  (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells 4944755 264.1    7862057 419.9  7379076 394.1
+## Vcells 9965473  76.1   26111350 199.3 26091998 199.1
+</code></pre>
+<h2 id="calculating-ndvi-index">Calculating NDVI index</h2>
+<ul>
+<li>By observing our composites images we can see a large amount of
+    vegetation.</li>
+<li>Given our available bands, we can derive an NDVI (Normalized
+    Difference Vegetation Index)</li>
+<li>Recall that NDVI scales from -1 to +1, with +1 indicating more
+    vegetation cover</li>
+<li>These values are largely driven by pigments in vegetation measured
+    by the bands used</li>
+</ul>
+<p>We can calculate our NDVI index as follows:</p>
+<pre><code>ndvi &lt;- (image[[5]] - image[[4]]) / (image[[5]] + image[[4]])
+</code></pre>
+<ul>
+<li>What bands are used in the NDVI calculation?</li>
+<li>Why these bands? (Recall the Vegetation Spectrum)</li>
+</ul>
+<h3 id="exploring-the-ndvi-result">Exploring the NDVI result</h3>
+<p>Now, with the help of some functins, we can explore what is the
+resulting NDVI values for our image:</p>
+<pre><code># minimum
+min(ndvi@data@values, na.rm = T)
+
+## [1] -0.1987892
+
+# maximum
+max(ndvi@data@values, na.rm = T)
+
+## [1] 0.6099971
+
+# standard deviation
+sd(ndvi@data@values, na.rm = T)
+
+## [1] 0.1311813
+
+# summary
+summary(ndvi)
+
+##                 layer
+## Min.    -1.987892e-01
+## 1st Qu.  1.509053e-01
+## Median   2.238097e-01
+## 3rd Qu.  3.335210e-01
+## Max.     6.099971e-01
+## NA's     6.410260e+05
+
+summary(ndvi@data@values)
+
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##    -0.2     0.2     0.2     0.2     0.3     0.6  641026
+</code></pre>
+<h3 id="plotting-ndvi-index">Plotting NDVI index</h3>
+<p>Also, other way to explore our resulting NDVI index, we can plot it:</p>
+<pre><code>as(ndvi, "SpatialPixelsDataFrame") %&gt;% 
+  as.data.frame() %&gt;%
+  ggplot(data = .) +
+  geom_tile(aes(x = x, y = y, fill = layer)) +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.background = element_blank(),
+        panel.grid.minor = element_blank()) +
+  labs(title = "NDVI for Calgary, Alberta", 
+       x = " ", 
+       y = " ") +
+  scale_fill_gradient(high = "#CEE50E", 
+                      low = "#087F28",
+                      name = "NDVI")
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-17-1.png" /></p>
+<ul>
+<li>Feel free to use other color gradients and plotting schemes, be as
+    creative as you wish</li>
+<li>Do the higher NDVI values match up with any thing from the True
+    Color or False Color Composites?</li>
+</ul>
+<h2 id="supervised-classification">Supervised Classification</h2>
+<p>We are now going to attempt a Supervised Classification to try and
+classify each pixel of the image into various classes. Because this is a
+Supervised Classification we will first need to create a training
+dataset as a first step.</p>
+<p>This is an interactive process, meaning that everytime that we run the
+code <code>editMap()</code> an interface will open on the <strong>Viewer panel</strong>. This
+interface will allow us to click and point the image to generate some
+object in our Global Environment.</p>
+<h3 id="details">Details</h3>
+<p>TODO: This is not anymore polygons, we are going to use points.</p>
+<p>The below line will open up RGB image in the plotting window as an
+interactive image. You can pan around with the hand and zoom in with the
+scroll wheel. Get familiar with the controls and movement before moving
+on. Once comfortable, select the option from the left menu for drawing a
+‘polygon’, this will allow you to click and define a polygon You are
+clicking to place the vertices, so be aware that it will be drawing
+straight lines between points. Once you have defined a polygon click on
+the first point to close it, then you can click ‘cancel’ to clear the
+tool and move to the next area. Please only do one class at a time,
+meaning that <strong>if you are defining agriculture, just draw all</strong>
+<strong>agriculture polygons</strong>.</p>
+<p>Once you have draw several polygons for one class, select ‘done’ in the
+bottom right.</p>
+<p>We will repeat this process for each of the following classes:</p>
+<ul>
+<li>Urban</li>
+<li>Water</li>
+<li>Agriculture</li>
+<li>Other Vegetation</li>
+</ul>
+<p>Be aware that it may be beneficial to use the False Color Composite for
+some classes such as water.</p>
+<p>Other vegetation will cover things such as shrublands, forests, or
+grasslands that are possible not as vibrant green as agriculture</p>
+<p>Also, this step can crash some R sessions in computers with limited
+memory. So, after each polygon is created, we are using the function
+<code>saveRDS</code>, that is going to save the object in our <code>data</code> folder.</p>
+<p>Say for example that you spend 15 minutes creating the agriculture
+polygons. Now you are working on creating the urban polygons but in the
+middle of that process your R session just crashed.</p>
+<p>You can load the agriculture polygons and avoid start over again with
+this category. The code to load the saved polygons objects is below.</p>
+<h4 id="agriculture">Agriculture</h4>
+<pre><code># Create polygons
+points_agriculture &lt;- viewRGB(image, r = 4, g = 3, b = 2) %&gt;% 
+  editMap()
+
+# Save object
+saveRDS(points_agriculture, file = "data/points_agriculture.rds")
+
+# Rename column with agriculture geometries
+agriculture &lt;- points_agriculture$finished$geometry %&gt;% 
+  st_sf() %&gt;% 
+  mutate(class = "agriculture", id = 1)
+</code></pre>
+<h4 id="urban">Urban</h4>
+<pre><code># Create polygons
+points_urban &lt;- viewRGB(image, r = 4, g = 3, b = 2) %&gt;% 
+  editMap()
+
+# Save object
+saveRDS(points_urban, file = "data/points_urban.rds")
+
+# Rename column with urban geometries
+urban &lt;- points_urban$finished$geometry %&gt;% 
+  st_sf() %&gt;% 
+  mutate(class = "urban", id = 2)
+</code></pre>
+<h4 id="water">Water</h4>
+<pre><code># Create polygons
+points_water &lt;- viewRGB(image, r = 5, g = 4, b = 3) %&gt;% 
+  editMap()
+
+# Save object
+saveRDS(points_water, file = "data/points_water.rds")
+
+# Rename column with water geometries
+water &lt;- points_water$finished$geometry %&gt;% 
+  st_sf() %&gt;%
+  mutate(class = "water", id = 3)
+</code></pre>
+<h4 id="vegetation">Vegetation</h4>
+<pre><code># Create polygons
+points_vegetation &lt;- viewRGB(image, r = 4, g = 3, b = 2) %&gt;% 
+  editMap()
+
+# Save object
+saveRDS(points_vegetation, file = "data/points_vegetation.rds")
+
+# Rename column with vegetation geometries
+veg &lt;- points_vegetation$finished$geometry %&gt;% 
+  st_sf() %&gt;%
+  mutate(class = "vegetation", id = 4)
+</code></pre>
+<h3 id="loading-points-files">Loading points files</h3>
+<p>If you missed one of your processes, load the point file with the next
+instruction. Just use the one that you need:</p>
+<pre><code>agriculture &lt;- readRDS(file = "data/points_agriculture.rds")
+veg &lt;- readRDS(file = "data/points_urban.rds")
+water &lt;- readRDS(file = "data/points_water.rds")
+urban &lt;- readRDS(file = "data/points_vegetation.rds")
+</code></pre>
+<h3 id="collect-al-training-data">Collect al training data</h3>
+<p>Now that we have all the polygons, we need to collect all this
+information into one object that we call <strong>training dataset</strong></p>
+<pre><code>training_points &lt;- rbind(agriculture, veg, water, urban) %&gt;% 
+  as.data.frame()
+</code></pre>
+<p>At this point, this is just an object in <code>Global environment</code> To export
+this and use it in other projects or in a R session later (instead of
+repeating again all the steps before), we can save it as a shapefile.</p>
+<p>Be aware that we are saving this in our <code>data</code> folder within our working
+project.</p>
+<pre><code>write_sf(training_points, 
+         "data/calgary_training_points.shp",
+         driver = "ESRI shapefile")
+</code></pre>
+<p>If we want to read this in a later R session, we can do it as follows:</p>
+<pre><code>training_points &lt;- st_read("data/calgary_training_points.shp")
+
+## Reading layer `calgary_training_points' from data source 
+##   `/home/ronny/Desktop/ceos_tutorials/notes/data/calgary_training_points.shp' 
+##   using driver `ESRI Shapefile'
+## Simple feature collection with 91 features and 2 fields
+## Geometry type: POINT
+## Dimension:     XY
+## Bounding box:  xmin: -114.2097 ymin: 50.86595 xmax: -113.8678 ymax: 51.13811
+## Geodetic CRS:  WGS 84
+</code></pre>
+<h4 id="explore-training-dataset">Explore training dataset</h4>
+<p>Now, we are going to check the distribution of points for our training
+dataset. At first, we are going to read the Calgary city boudary:</p>
+<pre><code>city_boundary &lt;- st_read("data/CityBoundary.geojson", quiet = TRUE)
+</code></pre>
+<p>Now, we are going to create a map looking at just the distribution of
+points:</p>
+<pre><code>points_distribution &lt;- ggplot() +
+  geom_sf(data = city_boundary, fill = "light gray", color = NA) +
+  geom_sf(data = training_points, size = 0.5) +
+  labs(title = "Distribution of\nclassification points") +
+  theme(panel.background = element_blank(), axis.ticks = element_blank(), 
+        axis.text = element_blank())
+
+points_distribution
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-27-1.png" /></p>
+<p>Great! We are going to create a second map looking at the distribution
+of points by the classification type that we created:</p>
+<pre><code>points_categories &lt;- ggplot() +
+  geom_sf(data = city_boundary, fill = "light gray", color = NA) +
+  geom_sf(data = training_points, aes(color = class), size = 0.5) +
+  scale_color_viridis_d() +
+  labs(title = "Classification points by land use") +
+  theme(panel.background = element_blank(), axis.ticks = element_blank(), 
+        axis.text = element_blank())
+
+points_categories
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-28-1.png" /></p>
+<p>Now, we are going to put both plots side by side:</p>
+<pre><code>points_distribution + 
+  points_categories + 
+  plot_layout(ncol = 2)
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-29-1.png" /></p>
+<p>See how your distribution is allocated, if you feel as though it is
+biased to one section or not well distributed you may wish to redo the
+training data specification.</p>
+<h4 id="extracting-spectral-data-for-training-points">Extracting spectral data for training points</h4>
+<p>Now we will extract the spectral data or band data for our training
+points. First convert to a spatial point format</p>
+<pre><code>training_points &lt;- as(training_points, 'Spatial')
+</code></pre>
+<p>Now we have a new object with the bands information, but it’s in a a
+special structure called <code>SpatialPointsDataFrame</code>. Our next step will be
+to extract the values in this object and the image (trainign data
+points) in a matrix structure:</p>
+<pre><code>training_values_matrix &lt;- raster::extract(image, training_points) %&gt;%
+  round()
+
+## Warning in .local(x, y, ...): Transforming SpatialPoints to the
+## crs of the Raster
+</code></pre>
+<p>Now, we should have a matrix of band values for each point</p>
+<pre><code>head(training_values_matrix)
+
+##      band1 band2 band3 band4 band5 band6 band7 band8 band9
+## [1,]  9530  8610  7926  6932 18751  9616  6885  7577  5070
+## [2,]  9535  8602  8141  6850 23999  9585  6947  7578  5065
+## [3,]  9842  9211 10517  9432 26344 11032  7860  9947  5065
+## [4,]  9626  8811  8410  7594 17444 12394  8562  8039  5055
+## [5,]  9668  9063 10535  9434 27810 10496  7499  9956  5069
+## [6,]  9786  9195 10887  9815 28364 11230  7973 10334  5087
+##      band10 band11
+## [1,]  26574  24651
+## [2,]  26404  24508
+## [3,]  26641  24780
+## [4,]  28911  26357
+## [5,]  25827  24022
+## [6,]  26447  24546
+</code></pre>
+<ul>
+<li>Try exploring the data through plotting</li>
+<li>Remember you id numbers from the sections above</li>
+</ul>
+<!-- -->
+
+<pre><code>profiles &lt;- training_values_matrix %&gt;% 
+  as.data.frame() %&gt;% 
+  cbind(., training_points$id) %&gt;% 
+  rename(id = "training_points$id") %&gt;% 
+  na.omit() %&gt;% 
+  group_by(id) %&gt;% 
+  summarise(band1 = mean(band1),
+            band2 = mean(band2),
+            band3 = mean(band3),
+            band4 = mean(band4),
+            band5 = mean(band5),
+            band6 = mean(band6),
+            band7 = mean(band7),
+            band8 = mean(band8),
+            band9 = mean(band9),
+            band10 = mean(band10),
+            band11 = mean(band11)) %&gt;% 
+  mutate(id = case_when(id == 1 ~ "agriculture",
+                        id == 2 ~ "urban",
+                        id == 3 ~ "water",
+                        id == 4 ~ "other vegetation"
+  )) %&gt;% 
+  as.data.frame()
+
+# Take a look of the first values
+glimpse(profiles)
+
+## Rows: 4
+## Columns: 12
+## $ id     &lt;chr&gt; "agriculture", "urban", "water", "other vegeta…
+## $ band1  &lt;dbl&gt; 9885.654, 11275.897, 9662.667, 9995.286
+## $ band2  &lt;dbl&gt; 9158.038, 10688.795, 8742.917, 9274.214
+## $ band3  &lt;dbl&gt; 9662.769, 10306.103, 7821.667, 9009.643
+## $ band4  &lt;dbl&gt; 8673.038, 10425.872, 6791.417, 8467.929
+## $ band5  &lt;dbl&gt; 23836.077, 14951.462, 6587.833, 18410.286
+## $ band6  &lt;dbl&gt; 11477.308, 13372.897, 5450.083, 14023.786
+## $ band7  &lt;dbl&gt; 8322.731, 11576.154, 5276.417, 9731.429
+## $ band8  &lt;dbl&gt; 9166.500, 10354.333, 7408.583, 8752.643
+## $ band9  &lt;dbl&gt; 5069.500, 5079.410, 5045.000, 5103.857
+## $ band10 &lt;dbl&gt; 26881.77, 30648.46, 25931.75, 29389.14
+## $ band11 &lt;dbl&gt; 24886.50, 27825.49, 24022.00, 26764.50
+</code></pre>
+<p>After all this data wrangling, we have a data frame with our values of
+interest that can be used to create a plot of the profiles, to check if
+they are indeed unique and distinguishable</p>
+<pre><code>profiles %&gt;% 
+  select(-id) %&gt;% 
+  gather() %&gt;% 
+  mutate(class = rep(c("agriculture", "urban", "water", "other vegetation"),
+                     11)) %&gt;% 
+  ggplot(data = ., aes(x = fct_relevel(as.factor(key),
+                                       levels = c("band1", "band2", 
+                                                  "band3", "band4",
+                                                  "band5", "band6",
+                                                  "band7", "band8",
+                                                  "band9", "band10",
+                                                  "band11")), y = value, 
+                       group  = class, color = class)) +
+  geom_point(size = 2.5) +
+  geom_line(lwd = 1.2) +
+  scale_color_viridis_d() +
+  labs(title = "Spectral Profile from Landsat 8 Imagery",
+       x = "Bands",
+       y = "Reflectance",
+       color = "Class") +
+  #scale_y_continuous(limits=c(5000, 15000)) +
+  theme(axis.text.x = element_text(angle = 45, h = 1)) +
+  theme(panel.background = element_blank(),
+        panel.grid.major = element_line(color = "gray", size = 0.5),
+        panel.grid.minor = element_line(color = "gray", size = 0.5),
+        axis.ticks = element_blank())
+
+## Warning: Outer names are only allowed for unnamed scalar atomic
+## inputs
+
+## Warning: Outer names are only allowed for unnamed scalar atomic
+## inputs
+
+## Warning: Outer names are only allowed for unnamed scalar atomic
+## inputs
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-34-1.png" /></p>
+<p>Another way to assess this is through a density plot, note any severe
+overlap between classes at each band. The mean values will also indicate
+if there is a large degree of overlap between classes:</p>
+<pre><code>profiles %&gt;% 
+  select(-id) %&gt;% 
+  gather() %&gt;% 
+  mutate(class = rep(c("agriculture", 
+                       "urban", 
+                       "water", 
+                       "other vegetation"), 11)) %&gt;% 
+  ggplot(., aes(x = value,
+                group = as.factor(class),
+                fill = as.factor(class))) + 
+  geom_density(alpha = 0.75) + 
+  geom_vline(data = . %&gt;% 
+               group_by(class) %&gt;%
+               summarise(grp.mean = mean(value)),
+             aes(xintercept = grp.mean, color = class),
+             linetype = "dashed", size = 1) +
+  scale_fill_manual(values = c('lawngreen',
+                               'burlywood',
+                               'lightblue',
+                               'darkgreen'),
+                    name = "class") +
+  scale_color_manual(values = c("black",
+                                "red",
+                                "orange",
+                                "yellow")) +
+  theme(panel.background = element_blank(),
+        panel.grid.major = element_line(color = "gray", size = 0.5),
+        panel.grid.minor = element_line(color = "gray", size = 0.5),
+        axis.ticks = element_blank()) +
+  labs(x = "Reflectance Value",
+       y = "Density",
+       title = "Density histograms of spectral profiles",
+       subtitle = "Vertical lines represent mean group reflectance values")
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-35-1.png" /></p>
+<ul>
+<li>Note the similarities in overlap between the density plot and the
+    spectral profile.</li>
+<li>These overlapping classes may prove to be difficult to distinguish
+    via the classification.</li>
+</ul>
+<h3 id="classifyng-the-image">Classifyng the image</h3>
+<p>Now we can move onto classifying the image by training the model. As a
+first step, we are going to combine the classes and extracted point
+values in one data frame:</p>
+<pre><code>training_set &lt;- data.frame(training_points$class, training_values_matrix)
+</code></pre>
+<p>We then use the rpart() to train the model</p>
+<pre><code>model_class &lt;- rpart(as.factor(training_points.class) ~ . ,
+                     data = training_set, method = 'class')
+</code></pre>
+<p>Now, we are going to plot a decision tree resulting from the training</p>
+<pre><code>rpart.plot(model_class, box.palette = 0, main = "Classification Tree")
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-38-1.png" /></p>
+<p>We are set with the training section and the model creation. Now we can
+run the model to obtain the predictions of the entire image:</p>
+<pre><code>predictions &lt;- predict(image, model_class, 
+                       type = 'class',
+                       progress = 'text') %&gt;% 
+  ratify()
+
+##   |                                                             |                                                     |   0%  |                                                             |=============                                        |  25%  |                                                             |==========================                           |  50%  |                                                             |========================================             |  75%  |                                                             |=====================================================| 100%
+##
+</code></pre>
+<p>After we have all the predictions for the entire image, we are going to
+set the levels to our selected classes:</p>
+<pre><code>levels(predictions) &lt;- levels(predictions)[[1]] %&gt;%
+  mutate(legend = c("agriculture","urban","water", "other vegetation"))
+</code></pre>
+<p>Finally, let’s check the result with a plot:</p>
+<pre><code>levelplot(predictions, maxpixels = 1e6,
+          col.regions = c('lawngreen', 'burlywood', 'lightblue', 'darkgreen'),
+          scales = list(draw = FALSE),
+          main = "Supervised Classification of Imagery")
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-41-1.png" /></p>
+<ul>
+<li>Does the results seem reasonable?</li>
+<li>Why or why not?</li>
+<li>Where are areas or conflict?</li>
+</ul>
+<p>To validate our results, we can use a confusion matrix in which we can
+check the predicted values against the ground-truth points:</p>
+<pre><code>test &lt;- raster::extract(predictions, training_points) %&gt;% 
+  as.data.frame() %&gt;% 
+  rename(id = ".")
+
+## Warning in .local(x, y, ...): Transforming SpatialPoints to the
+## crs of the Raster
+
+test_probs &lt;- data.frame(
+  obs = as.factor(training_points$id),
+  pred = as.factor(test$id)
+) %&gt;% 
+  mutate(correct = ifelse(obs == pred, 1, 0))
+
+confMatrix &lt;- confusionMatrix(test_probs$obs, test_probs$pred)
+
+confMatrix
+
+## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction  1  2  3  4
+##          1 24  0  2  0
+##          2  0 37  2  0
+##          3  0  0  0 12
+##          4  0  0 14  0
+## 
+## Overall Statistics
+##                                           
+##                Accuracy : 0.6703          
+##                  95% CI : (0.5639, 0.7653)
+##     No Information Rate : 0.4066          
+##     P-Value [Acc &gt; NIR] : 3.399e-07       
+##                                           
+##                   Kappa : 0.5317          
+##                                           
+##  Mcnemar's Test P-Value : NA              
+## 
+## Statistics by Class:
+## 
+##                      Class: 1 Class: 2 Class: 3 Class: 4
+## Sensitivity            1.0000   1.0000   0.0000   0.0000
+## Specificity            0.9701   0.9630   0.8356   0.8228
+## Pos Pred Value         0.9231   0.9487   0.0000   0.0000
+## Neg Pred Value         1.0000   1.0000   0.7722   0.8442
+## Prevalence             0.2637   0.4066   0.1978   0.1319
+## Detection Rate         0.2637   0.4066   0.0000   0.0000
+## Detection Prevalence   0.2857   0.4286   0.1319   0.1538
+## Balanced Accuracy      0.9851   0.9815   0.4178   0.4114
+</code></pre>
+<ul>
+<li>Review the results, what class or classes tend to be misrepresented
+    or misclassified?</li>
+<li>The rows and columns of the confusion matrix should provide this
+    information, as well as the sensitivity analysis</li>
+<li>What is your overall accuracy?</li>
+</ul>
+<blockquote>
+<p>If you need help with the interpretation of the confusion matrix, you
+can check this
+<a href="https://www.journaldev.com/46732/confusion-matrix-in-r">information</a></p>
+</blockquote>
+<h2 id="unsupervised-image-classification">Unsupervised Image Classification</h2>
+<p><strong>This below section for the EAS451 class of Fall 2021 is optional</strong></p>
+<p>For this section we are going to be completely hands off in the
+classification process. The idea is that the classification method will
+find statistically distinct pixels or clusters of pixels and use those
+to define numbered classes, this will be refined multiple times to give
+the fewest number of distinct classes as possible.</p>
+<p>We will use 3 different methods:</p>
+<ul>
+<li>Kmeans</li>
+<li>Clara Clustering</li>
+<li>Random Forest</li>
+</ul>
+<p>Before we start, we need the original image data that we created above
+with the bands.</p>
+<p>From this image, we will create a matrix of values for the
+classification:</p>
+<pre><code>v &lt;- getValues(image)
+i &lt;- which(!is.na(v))
+v &lt;- na.omit(v) #remove NA values because they cannot be classified
+</code></pre>
+<h3 id="kmeans-classification">Kmeans classification</h3>
+<p>For this classification method, we will use the <code>kmeans</code> package. The
+information of this package can be found
+<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/kmeans">here</a></p>
+<p>In the <code>kmeans()</code> function we are specificying 10 initial centers of
+clusters, runninig 100 iterations and 10 intiial configurations. Then,
+we plot the results</p>
+<pre><code>clusters &lt;- kmeans(v, 4, iter.max = 100, nstart = 10)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (=
+## 47147350)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (=
+## 47147350)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (=
+## 47147350)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (=
+## 47147350)
+
+kmeans_raster &lt;- raster(image)
+
+kmeans_raster[i] &lt;- clusters$cluster
+
+plot(kmeans_raster)
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-44-1.png" /></p>
+<h3 id="clara-classification">Clara classification</h3>
+<p>For this classification method, we will use the <code>clara</code> package. The
+information of this package can be found
+<a href="https://www.rdocumentation.org/packages/cluster/versions/2.1.2/topics/clara">here</a></p>
+<pre><code>clus &lt;- clara(v, 4, samples = 500, metric = "manhattan", pamLike = T)
+
+clara_raster &lt;- raster(image)
+
+clara_raster[i] &lt;- clus$clustering
+
+plot(clara_raster, col = topo.colors(5)) #try other colors as well
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-45-1.png" /></p>
+<h3 id="unsupervised-random-forest-classification-using-kmeans">Unsupervised Random Forest classification using kmeans</h3>
+<p>For this classification method, we will use the <code>randomForest</code> package.
+The information of this package can be found
+<a href="https://www.rdocumentation.org/packages/randomForest/versions/4.6-14/topics/randomForest">here</a></p>
+<pre><code>vx &lt;- v[sample(nrow(v), 500),]
+rf = randomForest(vx)
+rf_prox &lt;- randomForest(vx, ntree = 1000, proximity = TRUE)$proximity
+
+random_forest_kmeans &lt;- kmeans(rf_prox, 4, iter.max = 100, nstart = 10)
+
+random_forest_class &lt;- randomForest(vx, 
+                                    as.factor(random_forest_kmeans$cluster), 
+                                    ntree = 500)
+
+random_forest_raster &lt;- predict(image, random_forest_class)
+
+plot(random_forest_raster)
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-46-1.png" /></p>
+<h3 id="plotting-all-models-results">Plotting all models results</h3>
+<p>Finally, we can plot all the three models results into one layerstack to
+compare the results:</p>
+<pre><code>class_stack &lt;- stack(kmeans_raster, clara_raster, random_forest_raster)
+
+names(class_stack) &lt;- c("kmeans", "clara", "randomForest")
+
+par(mfrow = c(3, 1))
+
+plot(class_stack)
+</code></pre>
+<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-47-1.png" /></p>
+<ul>
+<li>Ideally we would then test the accuracy against the ground truth
+    file, however that would require the manual merging of the
+    unsupervised classes and then assessing accuracy wich for the sake
+    of this assignment and time boundaries is not required</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>
