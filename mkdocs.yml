@@ -1,0 +1,8 @@
+site_name: draweR
+site_url: https://ceos-university-of-alberta.github.io/ceos_tutorials/ 
+site_author: Ronny A. Hernández Mora
+theme:
+   name: material
+markdown_extensions:
+   - toc:
+      permalink: []
