@@ -452,9 +452,9 @@ rm(bands)
 well that may be occupied</p>
 <pre><code>gc()
 
-##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells  5419809 289.5   17126477  914.7  17126477  914.7
-## Vcells 44067490 336.3  142022962 1083.6 166694524 1271.8
+##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells  5420241 289.5   17126477 914.7  17126477  914.7
+## Vcells 44071308 336.3  120970265 923.0 166694524 1271.8
 </code></pre>
 <h2 id="calculating-ndvi-index">Calculating NDVI index</h2>
 <ul>
@@ -999,6 +999,14 @@ information of this package can be found
 clusters, runninig 100 iterations and 10 intiial configurations. Then,
 we plot the results</p>
 <pre><code>clusters &lt;- kmeans(v, 4, iter.max = 100, nstart = 10)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
 ## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
