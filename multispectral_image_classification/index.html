@@ -227,9 +227,10 @@
                 
                 
                 <h1 id="multispectral-image-classification">Multispectral image classification</h1>
-<blockquote>
-<p>Connor Bax &amp; Ronny A. Hernández Mora 23/11/2021</p>
-</blockquote>
+<ul>
+<li>Connor Bax &amp; <a href="http://ronnyhdez.rbind.io/">Ronny A. Hernández Mora</a></li>
+<li>23/11/2021</li>
+</ul>
 <p>This is the web static documentation for the multispectral image
 classification tutorial.</p>
 <p>If you want to follow this tutorial you can download all the code from:</p>
@@ -452,9 +453,9 @@ rm(bands)
 well that may be occupied</p>
 <pre><code>gc()
 
-##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  5420241 289.5   17126477 914.7  17126477  914.7
-## Vcells 44071308 336.3  120970265 923.0 166694524 1271.8
+##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
+## Ncells  5423463 289.7   17126477  914.7  17126477  914.7
+## Vcells 44087043 336.4  134074635 1023.0 166694524 1271.8
 </code></pre>
 <h2 id="calculating-ndvi-index">Calculating NDVI index</h2>
 <ul>
@@ -999,14 +1000,6 @@ information of this package can be found
 clusters, runninig 100 iterations and 10 intiial configurations. Then,
 we plot the results</p>
 <pre><code>clusters &lt;- kmeans(v, 4, iter.max = 100, nstart = 10)
-
-## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
-
-## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
-
-## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
-
-## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
 ## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
