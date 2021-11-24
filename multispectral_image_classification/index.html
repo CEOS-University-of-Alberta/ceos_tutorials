@@ -227,12 +227,12 @@
                 
                 
                 <h1 id="multispectral-image-classification">Multispectral image classification</h1>
+<p>This is the documentation for the multispectral image classification
+tutorial. All the steps, code and explan</p>
 <ul>
 <li>Connor Bax &amp; <a href="http://ronnyhdez.rbind.io/">Ronny A. Hernández Mora</a></li>
 <li>23/11/2021</li>
 </ul>
-<p>This is the web static documentation for the multispectral image
-classification tutorial.</p>
 <p>If you want to follow this tutorial you can download all the code from:</p>
 <ul>
 <li><a href="https://github.com/CEOS-University-of-Alberta/multispectral_image_classification">https://github.com/CEOS-University-of-Alberta/multispectral_image_classification</a></li>
@@ -298,13 +298,13 @@ band11 &lt;- raster("data/band11.tif")
 that stand out</p>
 <pre><code>plot(band1)
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-1.png" /></p>
 <pre><code>plot(band10)
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-2.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-2.png" /></p>
 <pre><code>plot(band5)
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-3.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-4-3.png" /></p>
 <p>Now, let’s take a look of the band resolutions:</p>
 <pre><code>bands &lt;- c(band1, band2, band3, band4, band5, band6, 
            band7, band8, band9, band10, band11)
@@ -416,7 +416,7 @@ plotRGB(image, r = 4, g = 3, b = 2, axes = TRUE,
         stretch = "lin", main = "True Color Composite")
 box(col = "white")
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-11-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-11-1.png" /></p>
 <ul>
 <li>What bands are used in the True Color Composite? (Refer to the band
     list at the top ex: Band 9 (Cirrus))</li>
@@ -427,7 +427,7 @@ plotRGB(image, r = 5, g = 4, b = 3, axes = TRUE, stretch = "lin",
         main = "False Color Composite")
 box(col = "white")
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-12-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-12-1.png" /></p>
 <ul>
 <li>What bands are used in the True Color Composite? (Refer to the band
     list at the top ex: Band 9 (Cirrus))</li>
@@ -453,9 +453,9 @@ rm(bands)
 well that may be occupied</p>
 <pre><code>gc()
 
-##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells  5423463 289.7   17126477  914.7  17126477  914.7
-## Vcells 44087043 336.4  134074635 1023.0 166694524 1271.8
+##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells  5436841 290.4   16478510 880.1  14356936  766.8
+## Vcells 44119209 336.7  127813948 975.2 159535922 1217.2
 </code></pre>
 <h2 id="calculating-ndvi-index">Calculating NDVI index</h2>
 <ul>
@@ -526,7 +526,7 @@ summary(ndvi@data@values)
                       low = "#087F28",
                       name = "NDVI")
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-17-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-17-1.png" /></p>
 <ul>
 <li>Feel free to use other color gradients and plotting schemes, be as
     creative as you wish</li>
@@ -655,7 +655,7 @@ project.</p>
 <pre><code>training_points &lt;- st_read("data/calgary_training_points.shp")
 
 ## Reading layer `calgary_training_points' from data source 
-##   `/home/ronny/Desktop/ceos_tutorials/notes/data/calgary_training_points.shp' 
+##   `/home/ronny/Desktop/ceos_tutorials/data/calgary_training_points.shp' 
 ##   using driver `ESRI Shapefile'
 ## Simple feature collection with 91 features and 2 fields
 ## Geometry type: POINT
@@ -679,7 +679,7 @@ points:</p>
 
 points_distribution
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-27-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-27-1.png" /></p>
 <p>Great! We are going to create a second map looking at the distribution
 of points by the classification type that we created:</p>
 <pre><code>points_categories &lt;- ggplot() +
@@ -692,13 +692,13 @@ of points by the classification type that we created:</p>
 
 points_categories
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-28-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-28-1.png" /></p>
 <p>Now, we are going to put both plots side by side:</p>
 <pre><code>points_distribution + 
   points_categories + 
   plot_layout(ncol = 2)
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-29-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-29-1.png" /></p>
 <p>See how your distribution is allocated, if you feel as though it is
 biased to one section or not well distributed you may wish to redo the
 training data specification.</p>
@@ -714,26 +714,26 @@ points) in a matrix structure:</p>
 <pre><code>training_values_matrix &lt;- raster::extract(image, training_points) %&gt;%
   round()
 
-## Warning in .local(x, y, ...): Transforming SpatialPoints to the
-## crs of the Raster
+## Warning in .local(x, y, ...): Transforming SpatialPoints to the crs
+## of the Raster
 </code></pre>
 <p>Now, we should have a matrix of band values for each point</p>
 <pre><code>head(training_values_matrix)
 
-##      band1 band2 band3 band4 band5 band6 band7 band8 band9
-## [1,]  9530  8610  7926  6932 18751  9616  6885  7577  5070
-## [2,]  9535  8602  8141  6850 23999  9585  6947  7578  5065
-## [3,]  9842  9211 10517  9432 26344 11032  7860  9947  5065
-## [4,]  9626  8811  8410  7594 17444 12394  8562  8039  5055
-## [5,]  9668  9063 10535  9434 27810 10496  7499  9956  5069
-## [6,]  9786  9195 10887  9815 28364 11230  7973 10334  5087
-##      band10 band11
-## [1,]  26574  24651
-## [2,]  26404  24508
-## [3,]  26641  24780
-## [4,]  28911  26357
-## [5,]  25827  24022
-## [6,]  26447  24546
+##      band1 band2 band3 band4 band5 band6 band7 band8 band9 band10
+## [1,]  9530  8610  7926  6932 18751  9616  6885  7577  5070  26574
+## [2,]  9535  8602  8141  6850 23999  9585  6947  7578  5065  26404
+## [3,]  9842  9211 10517  9432 26344 11032  7860  9947  5065  26641
+## [4,]  9626  8811  8410  7594 17444 12394  8562  8039  5055  28911
+## [5,]  9668  9063 10535  9434 27810 10496  7499  9956  5069  25827
+## [6,]  9786  9195 10887  9815 28364 11230  7973 10334  5087  26447
+##      band11
+## [1,]  24651
+## [2,]  24508
+## [3,]  24780
+## [4,]  26357
+## [5,]  24022
+## [6,]  24546
 </code></pre>
 <ul>
 <li>Try exploring the data through plotting</li>
@@ -770,7 +770,7 @@ glimpse(profiles)
 
 ## Rows: 4
 ## Columns: 12
-## $ id     &lt;chr&gt; "agriculture", "urban", "water", "other vegetati…
+## $ id     &lt;chr&gt; "agriculture", "urban", "water", "other vegetation"
 ## $ band1  &lt;dbl&gt; 9885.654, 11275.897, 9662.667, 9995.286
 ## $ band2  &lt;dbl&gt; 9158.038, 10688.795, 8742.917, 9274.214
 ## $ band3  &lt;dbl&gt; 9662.769, 10306.103, 7821.667, 9009.643
@@ -822,7 +822,7 @@ they are indeed unique and distinguishable</p>
 ## Warning: Outer names are only allowed for unnamed scalar atomic
 ## inputs
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-34-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-34-1.png" /></p>
 <p>Another way to assess this is through a density plot, note any severe
 overlap between classes at each band. The mean values will also indicate
 if there is a large degree of overlap between classes:</p>
@@ -860,7 +860,7 @@ if there is a large degree of overlap between classes:</p>
        title = "Density histograms of spectral profiles",
        subtitle = "Vertical lines represent mean group reflectance values")
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-35-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-35-1.png" /></p>
 <ul>
 <li>Note the similarities in overlap between the density plot and the
     spectral profile.</li>
@@ -880,7 +880,7 @@ values in one data frame:</p>
 <p>Now, we are going to plot a decision tree resulting from the training</p>
 <pre><code>rpart.plot(model_class, box.palette = 0, main = "Classification Tree")
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-38-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-38-1.png" /></p>
 <p>We are set with the training section and the model creation. Now we can
 run the model to obtain the predictions of the entire image:</p>
 <pre><code>predictions &lt;- predict(image, model_class, 
@@ -888,7 +888,7 @@ run the model to obtain the predictions of the entire image:</p>
                        progress = 'text') %&gt;% 
   ratify()
 
-##   |                                                               |                                                       |   0%  |                                                               |==============                                         |  25%  |                                                               |============================                           |  50%  |                                                               |=========================================              |  75%  |                                                               |=======================================================| 100%
+##   |                                                                  |                                                          |   0%  |                                                                  |==============                                            |  25%  |                                                                  |=============================                             |  50%  |                                                                  |============================================              |  75%  |                                                                  |==========================================================| 100%
 ##
 </code></pre>
 <p>After we have all the predictions for the entire image, we are going to
@@ -902,7 +902,7 @@ set the levels to our selected classes:</p>
           scales = list(draw = FALSE),
           main = "Supervised Classification of Imagery")
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-41-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-41-1.png" /></p>
 <ul>
 <li>Does the results seem reasonable?</li>
 <li>Why or why not?</li>
@@ -914,8 +914,8 @@ check the predicted values against the ground-truth points:</p>
   as.data.frame() %&gt;% 
   rename(id = ".")
 
-## Warning in .local(x, y, ...): Transforming SpatialPoints to the
-## crs of the Raster
+## Warning in .local(x, y, ...): Transforming SpatialPoints to the crs
+## of the Raster
 
 test_probs &lt;- data.frame(
   obs = as.factor(training_points$id),
@@ -1013,7 +1013,7 @@ kmeans_raster[i] &lt;- clusters$cluster
 
 plot(kmeans_raster)
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-44-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-44-1.png" /></p>
 <h3 id="clara-classification">Clara classification</h3>
 <p>For this classification method, we will use the <code>clara</code> package. The
 information of this package can be found
@@ -1026,7 +1026,7 @@ clara_raster[i] &lt;- clus$clustering
 
 plot(clara_raster, col = topo.colors(5)) #try other colors as well
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-45-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-45-1.png" /></p>
 <h3 id="unsupervised-random-forest-classification-using-kmeans">Unsupervised Random Forest classification using kmeans</h3>
 <p>For this classification method, we will use the <code>randomForest</code> package.
 The information of this package can be found
@@ -1045,7 +1045,7 @@ random_forest_raster &lt;- predict(image, random_forest_class)
 
 plot(random_forest_raster)
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-46-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-46-1.png" /></p>
 <h3 id="plotting-all-models-results">Plotting all models results</h3>
 <p>Finally, we can plot all the three models results into one layerstack to
 compare the results:</p>
@@ -1057,7 +1057,7 @@ par(mfrow = c(3, 1))
 
 plot(class_stack)
 </code></pre>
-<p><img alt="" src="/home/ronny/Desktop/ceos_tutorials/docs/multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-47-1.png" /></p>
+<p><img alt="" src="../multispectral_image_classification_files/figure-markdown_strict/unnamed-chunk-47-1.png" /></p>
 <ul>
 <li>Ideally we would then test the accuracy against the ground truth
     file, however that would require the manual merging of the
