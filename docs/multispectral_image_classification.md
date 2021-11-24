@@ -1,3 +1,18 @@
+# Multispectral image classification
+
+-   Connor Bax & [Ronny A. Hernández Mora](http://ronnyhdez.rbind.io/)
+-   23/11/2021
+
+This is the web static documentation for the multispectral image
+classification tutorial.
+
+If you want to follow this tutorial you can download all the code from:
+
+-   <https://github.com/CEOS-University-of-Alberta/multispectral_image_classification>
+
+After you download all the materials, unzip your folder and open your
+.Rproj file.
+
 # Prepare your working folder
 
 If you downloaded this repo directly from GitHub, make sure to create a
@@ -238,9 +253,9 @@ well that may be occupied
 
     gc()
 
-    ##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-    ## Ncells 4944755 264.1    7862057 419.9  7379076 394.1
-    ## Vcells 9965473  76.1   26111350 199.3 26091998 199.1
+    ##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
+    ## Ncells  5423463 289.7   17126477  914.7  17126477  914.7
+    ## Vcells 44087043 336.4  134074635 1023.0 166694524 1271.8
 
 ## Calculating NDVI index
 
@@ -594,7 +609,7 @@ Now, we should have a matrix of band values for each point
 
     ## Rows: 4
     ## Columns: 12
-    ## $ id     <chr> "agriculture", "urban", "water", "other vegeta…
+    ## $ id     <chr> "agriculture", "urban", "water", "other vegetati…
     ## $ band1  <dbl> 9885.654, 11275.897, 9662.667, 9995.286
     ## $ band2  <dbl> 9158.038, 10688.795, 8742.917, 9274.214
     ## $ band3  <dbl> 9662.769, 10306.103, 7821.667, 9009.643
@@ -721,7 +736,7 @@ run the model to obtain the predictions of the entire image:
                            progress = 'text') %>% 
       ratify()
 
-    ##   |                                                             |                                                     |   0%  |                                                             |=============                                        |  25%  |                                                             |==========================                           |  50%  |                                                             |========================================             |  75%  |                                                             |=====================================================| 100%
+    ##   |                                                               |                                                       |   0%  |                                                               |==============                                         |  25%  |                                                               |============================                           |  50%  |                                                               |=========================================              |  75%  |                                                               |=======================================================| 100%
     ## 
 
 After we have all the predictions for the entire image, we are going to
@@ -843,17 +858,11 @@ we plot the results
 
     clusters <- kmeans(v, 4, iter.max = 100, nstart = 10)
 
-    ## Warning: Quick-TRANSfer stage steps exceeded maximum (=
-    ## 47147350)
+    ## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
-    ## Warning: Quick-TRANSfer stage steps exceeded maximum (=
-    ## 47147350)
+    ## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
-    ## Warning: Quick-TRANSfer stage steps exceeded maximum (=
-    ## 47147350)
-
-    ## Warning: Quick-TRANSfer stage steps exceeded maximum (=
-    ## 47147350)
+    ## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
     kmeans_raster <- raster(image)
 

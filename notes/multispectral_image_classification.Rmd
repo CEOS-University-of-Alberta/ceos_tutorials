@@ -9,6 +9,23 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Multispectral image classification
+
+This is the documentation for the multispectral image classification
+tutorial. All the steps, code and explan
+
+ - Connor Bax & [Ronny A. Hernández Mora](http://ronnyhdez.rbind.io/)
+ - 23/11/2021
+
+
+
+If you want to follow this tutorial you can download all the code from:
+
+ - https://github.com/CEOS-University-of-Alberta/multispectral_image_classification
+ 
+After you download all the materials, unzip your folder and open your .Rproj file.
+
+
 # Prepare your working folder
 
 If you downloaded this repo directly from GitHub, make sure to create a `data`
