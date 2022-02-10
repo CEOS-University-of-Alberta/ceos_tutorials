@@ -39,3 +39,4 @@ vignettes/*.pdf
 .Renviron
 notes/data/
 site/
+data/

@@ -17,8 +17,6 @@ tutorial. All the steps, code and explan
  - Connor Bax & [Ronny A. Hernández Mora](http://ronnyhdez.rbind.io/)
  - 23/11/2021
 
-
-
 If you want to follow this tutorial you can download all the code from:
 
  - https://github.com/CEOS-University-of-Alberta/multispectral_image_classification
