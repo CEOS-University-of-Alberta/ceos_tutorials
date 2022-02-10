@@ -177,6 +177,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../flux_tower_data_processing/" class="md-nav__link">
+        Flux tower data processing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -453,9 +468,9 @@ rm(bands)
 well that may be occupied</p>
 <pre><code>gc()
 
-##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  5436841 290.4   16478510 880.1  14356936  766.8
-## Vcells 44119209 336.7  127813948 975.2 159535922 1217.2
+##            used  (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells  5722153 305.6   10480042 559.7  9705519 518.4
+## Vcells 15389940 117.5   38827878 296.3 75489854 576.0
 </code></pre>
 <h2 id="calculating-ndvi-index">Calculating NDVI index</h2>
 <ul>
@@ -655,7 +670,7 @@ project.</p>
 <pre><code>training_points &lt;- st_read("data/calgary_training_points.shp")
 
 ## Reading layer `calgary_training_points' from data source 
-##   `/home/ronny/Desktop/ceos_tutorials/data/calgary_training_points.shp' 
+##   `/home/ronny/Documents/repos/github/ceos/ceos_tutorials/data/calgary_training_points.shp' 
 ##   using driver `ESRI Shapefile'
 ## Simple feature collection with 91 features and 2 fields
 ## Geometry type: POINT
@@ -714,26 +729,26 @@ points) in a matrix structure:</p>
 <pre><code>training_values_matrix &lt;- raster::extract(image, training_points) %&gt;%
   round()
 
-## Warning in .local(x, y, ...): Transforming SpatialPoints to the crs
-## of the Raster
+## Warning in .local(x, y, ...): Transforming SpatialPoints to the
+## crs of the Raster
 </code></pre>
 <p>Now, we should have a matrix of band values for each point</p>
 <pre><code>head(training_values_matrix)
 
-##      band1 band2 band3 band4 band5 band6 band7 band8 band9 band10
-## [1,]  9530  8610  7926  6932 18751  9616  6885  7577  5070  26574
-## [2,]  9535  8602  8141  6850 23999  9585  6947  7578  5065  26404
-## [3,]  9842  9211 10517  9432 26344 11032  7860  9947  5065  26641
-## [4,]  9626  8811  8410  7594 17444 12394  8562  8039  5055  28911
-## [5,]  9668  9063 10535  9434 27810 10496  7499  9956  5069  25827
-## [6,]  9786  9195 10887  9815 28364 11230  7973 10334  5087  26447
-##      band11
-## [1,]  24651
-## [2,]  24508
-## [3,]  24780
-## [4,]  26357
-## [5,]  24022
-## [6,]  24546
+##      band1 band2 band3 band4 band5 band6 band7 band8 band9
+## [1,]  9530  8610  7926  6932 18751  9616  6885  7577  5070
+## [2,]  9535  8602  8141  6850 23999  9585  6947  7578  5065
+## [3,]  9842  9211 10517  9432 26344 11032  7860  9947  5065
+## [4,]  9626  8811  8410  7594 17444 12394  8562  8039  5055
+## [5,]  9668  9063 10535  9434 27810 10496  7499  9956  5069
+## [6,]  9786  9195 10887  9815 28364 11230  7973 10334  5087
+##      band10 band11
+## [1,]  26574  24651
+## [2,]  26404  24508
+## [3,]  26641  24780
+## [4,]  28911  26357
+## [5,]  25827  24022
+## [6,]  26447  24546
 </code></pre>
 <ul>
 <li>Try exploring the data through plotting</li>
@@ -770,7 +785,7 @@ glimpse(profiles)
 
 ## Rows: 4
 ## Columns: 12
-## $ id     &lt;chr&gt; "agriculture", "urban", "water", "other vegetation"
+## $ id     &lt;chr&gt; "agriculture", "urban", "water", "other vegetati…
 ## $ band1  &lt;dbl&gt; 9885.654, 11275.897, 9662.667, 9995.286
 ## $ band2  &lt;dbl&gt; 9158.038, 10688.795, 8742.917, 9274.214
 ## $ band3  &lt;dbl&gt; 9662.769, 10306.103, 7821.667, 9009.643
@@ -888,7 +903,7 @@ run the model to obtain the predictions of the entire image:</p>
                        progress = 'text') %&gt;% 
   ratify()
 
-##   |                                                                  |                                                          |   0%  |                                                                  |==============                                            |  25%  |                                                                  |=============================                             |  50%  |                                                                  |============================================              |  75%  |                                                                  |==========================================================| 100%
+##   |                                                               |                                                       |   0%  |                                                               |==============                                         |  25%  |                                                               |============================                           |  50%  |                                                               |=========================================              |  75%  |                                                               |=======================================================| 100%
 ##
 </code></pre>
 <p>After we have all the predictions for the entire image, we are going to
@@ -914,8 +929,8 @@ check the predicted values against the ground-truth points:</p>
   as.data.frame() %&gt;% 
   rename(id = ".")
 
-## Warning in .local(x, y, ...): Transforming SpatialPoints to the crs
-## of the Raster
+## Warning in .local(x, y, ...): Transforming SpatialPoints to the
+## crs of the Raster
 
 test_probs &lt;- data.frame(
   obs = as.factor(training_points$id),
@@ -1007,6 +1022,10 @@ we plot the results</p>
 
 ## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
 
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
+
+## Warning: Quick-TRANSfer stage steps exceeded maximum (= 47147350)
+
 kmeans_raster &lt;- raster(image)
 
 kmeans_raster[i] &lt;- clusters$cluster
@@ -1079,6 +1098,26 @@ plot(class_stack)
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../flux_tower_data_processing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Flux tower data processing" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Flux tower data processing
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
