@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ceos-university-of-alberta.github.io/ceos_tutorials/</loc>
-         <lastmod>2022-02-10</lastmod>
+         <lastmod>2022-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ceos-university-of-alberta.github.io/ceos_tutorials/flux_tower_data_processing/</loc>
-         <lastmod>2022-02-10</lastmod>
+         <lastmod>2022-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ceos-university-of-alberta.github.io/ceos_tutorials/multispectral_image_classification/</loc>
-         <lastmod>2022-02-10</lastmod>
+         <lastmod>2022-03-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ceos-university-of-alberta.github.io/ceos_tutorials/test/</loc>
+         <lastmod>2022-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
